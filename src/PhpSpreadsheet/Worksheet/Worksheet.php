@@ -385,6 +385,12 @@ class Worksheet implements IComparable
             $this->cellCollection->unsetWorksheetCells();
             $this->cellCollection = null;
         }
+        if ($this->drawingCollection !== null) {
+            foreach ($this->drawingCollection as $d) {
+                $d->detach();
+            }
+            $this->drawingCollection = null;
+        }
         //    detach ourself from the workbook, so that it can then delete this worksheet successfully
         $this->parent = null;
     }

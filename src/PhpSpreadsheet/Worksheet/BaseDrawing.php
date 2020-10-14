@@ -529,4 +529,9 @@ class BaseDrawing implements IComparable
     {
         return $this->hyperlink;
     }
+    
+    public function detach()
+    {
+        $this->worksheet = null;
+    }
 }
