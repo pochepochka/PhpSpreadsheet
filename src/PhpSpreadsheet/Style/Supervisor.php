@@ -57,6 +57,11 @@ abstract class Supervisor implements IComparable
 
         return $this;
     }
+    
+    public function unbindParent()
+    {
+        $this->parent = null;
+    }
 
     /**
      * Is this a supervisor or a cell style component?
