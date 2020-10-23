@@ -404,8 +404,9 @@ class Xlsx extends BaseWriter
         } catch (OverflowException $e) {
             throw new WriterException('Could not close resource.');
         }
-
         $this->maybeCloseFileHandle();
+        $this->spreadSheet = null;
+        $this->writerParts = [];
     }
 
     /**
