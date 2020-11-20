@@ -520,8 +520,10 @@ class Spreadsheet
         }
         unset($worksheet);
         $this->workSheetCollection = [];
-        $this->cellXfSupervisor->unbindParent();
-        $this->cellXfSupervisor = null;
+        if ($this->cellXfSupervisor !== null) {
+            $this->cellXfSupervisor->unbindParent();
+            $this->cellXfSupervisor = null;
+        }
     }
 
     /**
